@@ -128,7 +128,7 @@ export default function NewLink() {
                     <EyeSlashIcon className='w-3 md:w-4 lg:w-8 cursor-pointer' onClick={() => setPasswordVisibility(!passwordVisible)}/>
                 }
                 <label className='text-2xl pl-10 pr-2'>Editable</label>
-                <input className='w-6 h-6' type='checkbox' onChange={onEditableChange} checked={editable}/>
+                <input className='w-6 h-6 text-gray-700 rounded' type='checkbox' onChange={onEditableChange} checked={editable}/>
             </div>
             <div className='flex items-center pl-9 py-5 '>
                 <BiSave className='w-12 h-12 cursor-pointer' onClick={save}/>
