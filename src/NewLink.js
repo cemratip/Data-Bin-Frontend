@@ -20,8 +20,8 @@ export default function NewLink() {
     const [passwordVisible, setPasswordVisibility] = useState(false);
     const [copied, setCopied] = useState(false);
     const [editable, setEditable] = useState(true);
-    const frontendBaseURL = 'http://localhost:3001/';
-    const backendBaseURL = 'http://localhost:3000/';
+    const frontendBaseURL = 'https://databin.co.uk/';
+    const backendBaseURL = 'https://data-bin.herokuapp.com/';
 
     useEffect(() => {
         axios.get(backendBaseURL)
