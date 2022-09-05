@@ -175,7 +175,7 @@ export default function ExistingLink() {
                         <p className='text-2xl border-t-2 border-l-2 border-r-2 border-gray-700 bg-gray-700 text-white rounded-t-lg px-2 w-16 cursor-pointer' onClick={e => setTextTabVisibility(true)}>Text</p>
                         {textTabVisible && (
                             <div className='h-screen'>
-                                <textarea className='px-1 overscroll-none w-1/2 h-1/2 border-2 border-gray-700 text-2xl drop-shadow-xl md:resize max-h-full rounded-b-lg rounded-r-md' readOnly={editable} maxLength="50000" value={textData} onChange={onTextChange}></textarea>
+                                <textarea className='px-1 overscroll-none w-1/2 h-1/2 border-2 border-gray-700 text-2xl drop-shadow-xl md:resize max-h-full rounded-b-lg rounded-r-md' readOnly={!editable} maxLength="50000" value={textData} onChange={onTextChange}></textarea>
                                 <div className='flex items-center space-x-3 overscroll-none'>
                                     <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={clearText}>Clear Text</button>
                                     <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={() => navigator.clipboard.writeText(textData)}>Copy Text</button>
