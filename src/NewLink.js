@@ -59,6 +59,7 @@ export default function NewLink() {
     }
 
     const save = () => {
+        console.log(new Date());
         if (!(saved == null)) {
             bcrypt.genSalt(10, function (err, salt) {
                 bcrypt.hash(password, salt, function (err, hashedPassword) {
