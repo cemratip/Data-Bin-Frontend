@@ -178,12 +178,17 @@ export default function ExistingLink() {
                                 <textarea className='px-1 overscroll-none w-1/2 h-1/2 border-2 border-gray-700 text-2xl drop-shadow-xl md:resize max-h-full rounded-b-lg rounded-r-md' readOnly={!editable} maxLength="50000" value={textData} onChange={onTextChange}></textarea>
                             </div>
                         )}
-                        <div className='flex items-center space-x-3 overscroll-none'>
-                            {!editable &&
+                        {!editable &&
+                            <div className='flex items-center space-x-3 overscroll-none'>
                                 <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={clearText}>Clear Text</button>
-                            }
-                            <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={() => navigator.clipboard.writeText(textData)}>Copy Text</button>
-                        </div>
+                                <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={() => navigator.clipboard.writeText(textData)}>Copy Text</button>
+                            </div>
+                        }
+                        {editable &&
+                            <div className='overscroll-none'>
+                                <button className='border-2 border-gray-700 bg-gray-700 drop-shadow-lg text-white py-1 px-2 rounded text-lg' onClick={() => navigator.clipboard.writeText(textData)}>Copy Text</button>
+                            </div>
+                        }
                     </div>
                 </div>
             }
