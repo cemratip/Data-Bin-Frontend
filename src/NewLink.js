@@ -90,9 +90,7 @@ export default function NewLink() {
 
     return (
         <div className='text-gray-700 bg-gray-200'>
-            <div>
-                <h1 className='pl-10 text-5xl bg-gray-700 text-white py-5'>NAME</h1>
-            </div>
+        <h1 className='pl-10 text-5xl bg-gray-700 text-white py-5'>NAME</h1>
             <div className='flex items-center pl-10 pt-10 pb-10'>
                 <p className='text-4xl pr-5'>Your link</p>
                 <input className='text-black border-2 border-black w-1/2 rounded px-2 text-4xl w-100' type='text' readOnly={true} value={link}></input>
@@ -103,7 +101,7 @@ export default function NewLink() {
                     <ClipboardDocumentCheckIcon className='w-4 md:w-7 lg:w-11 cursor-pointer' onClick={copyToClipboard}/>
                 }
             </div>
-            <div className='flex items-center pl-10 pt-5 pb-5 '>
+            <div className='flex items-center pl-10 pt-5 pb-5'>
                 <label className='text-2xl pr-2'>Link expires in</label>
                 <select className='border-2 border-black rounded-md' value={expiry} onChange={onExpiryChange}>
                     <option value="5m">5m</option>
