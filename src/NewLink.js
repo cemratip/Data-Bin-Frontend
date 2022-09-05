@@ -72,6 +72,7 @@ export default function NewLink() {
                         text_content: textData,
                         currentAt: new Date(),
                     }
+                    console.log(data);
                     axios.post(backendBaseURL, data);
                     setSaved(true);
                 })
