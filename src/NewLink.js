@@ -69,6 +69,7 @@ export default function NewLink() {
                         passworded: passworded,
                         password: hashedPassword,
                         text_content: textData,
+                        currentAt: new Date(),
                     }
                     axios.post(backendBaseURL, data);
                     setSaved(true);
