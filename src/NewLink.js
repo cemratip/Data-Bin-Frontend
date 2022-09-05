@@ -21,8 +21,7 @@ export default function NewLink() {
     const [passwordVisible, setPasswordVisibility] = useState(false);
     const [copied, setCopied] = useState(false);
     const [editable, setEditable] = useState(true);
-    //const frontendBaseURL = 'https://databin.co.uk/';
-    const frontendBaseURL = 'http://localhost:3000/';
+    const frontendBaseURL = 'https://databin.co.uk/';
     const backendBaseURL = 'https://data-bin.herokuapp.com/';
 
     useEffect(() => {

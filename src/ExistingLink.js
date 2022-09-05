@@ -18,8 +18,7 @@ export default function ExistingLink() {
     const [incorrectPassword, setIncorrectPassword] = useState(false);
     const [linkNotFound, setLinkNotFound] = useState(false);
     const [copied, setCopied] = useState(false);
-    //const frontendBaseURL = 'https://databin.co.uk/';
-    const frontendBaseURL = 'http://localhost:3000/';
+    const frontendBaseURL = 'https://databin.co.uk/';
     const backendBaseURL = 'https://data-bin.herokuapp.com/';
     const endpoint = window.location.href.replace(frontendBaseURL, '');
     const linkToDisplay = frontendBaseURL + endpoint;
