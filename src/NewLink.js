@@ -5,6 +5,7 @@ import { EyeIcon } from '@heroicons/react/24/solid';
 import { EyeSlashIcon } from '@heroicons/react/24/solid';
 import { ClipboardDocumentIcon } from '@heroicons/react/24/solid';
 import { ClipboardDocumentCheckIcon } from '@heroicons/react/24/solid';
+import logo from './logo.png';
 import { BiSave } from 'react-icons/bi';
 import bcrypt from "bcryptjs";
 
@@ -90,7 +91,9 @@ export default function NewLink() {
 
     return (
         <div className='text-gray-700 bg-gray-200'>
-        <h1 className='pl-10 text-5xl bg-gray-700 text-white py-5'>NAME</h1>
+            <div className='pl-10 text-5xl bg-gray-700 text-white py-5'>
+                <img className='w-35 h-10' src={logo} alt=''></img>
+            </div>
             <div className='flex items-center pl-10 pt-10 pb-10'>
                 <p className='text-4xl pr-5'>Your link</p>
                 <input className='text-black border-2 border-black w-1/2 rounded px-2 text-4xl w-100' type='text' readOnly={true} value={link}></input>

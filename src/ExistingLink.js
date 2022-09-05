@@ -1,6 +1,7 @@
 import './page.css';
 import {ClipboardDocumentCheckIcon, ClipboardDocumentIcon, EyeIcon} from '@heroicons/react/24/solid';
 import { EyeSlashIcon } from '@heroicons/react/24/solid';
+import logo from './logo.png';
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 import {BiSave} from "react-icons/bi";
@@ -111,7 +112,9 @@ export default function ExistingLink() {
 
     return (
         <div className='text-gray-700 bg-gray-200'>
-            <h1 className='pl-10 text-5xl bg-gray-700 text-white py-5'>NAME</h1>
+            <div className='pl-10 text-5xl bg-gray-700 text-white py-5'>
+                <img className='w-35 h-10' src={logo} alt=''></img>
+            </div>
             {linkNotFound &&
                 <div className='h-screen'>
                     <p className='text-5xl text-center pt-24'>Link Not Found</p>
