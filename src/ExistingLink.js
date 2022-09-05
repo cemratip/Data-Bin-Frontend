@@ -1,7 +1,7 @@
 import './page.css';
 import saveicon from './saveicon.png';
-import showicon from './showicon.jpg';
-import hideicon from './hideicon.jpg';
+import { EyeIcon } from '@heroicons/react/24/solid';
+import { EyeSlashIcon } from '@heroicons/react/24/solid';
 import React, {useEffect, useState} from "react";
 import axios from 'axios';
 
@@ -14,12 +14,12 @@ export default function ExistingLink() {
     const [passworded, setPassworded] = useState(null);
     const [password, setPassword] = useState();
     const [passwordVisible, setPasswordVisibility] = useState(false);
-    const [visibilityIcon, setVisibilityIcon] = useState(showicon);
+    const [visibilityIcon, setVisibilityIcon] = useState(EyeIcon);
     const [incorrectPassword, setIncorrectPassword] = useState(false);
     const [linkNotFound, setLinkNotFound] = useState(false);
-    const frontendBaseURL = 'https://data-bin-frontend.herokuapp.com/';
-    const backendBaseURL = 'https://data-bin.herokuapp.com/';
-    const endpoint = window.location.href.replace('https://data-bin-frontend.herokuapp.com/', '');
+    const frontendBaseURL = 'http://localhost:3001/';
+    const backendBaseURL = 'http://localhost:3000/';
+    const endpoint = window.location.href.replace('http://localhost:3001/', '');
     const linkToDisplay = frontendBaseURL + endpoint;
     const linkToCall = backendBaseURL + endpoint;
 
@@ -73,9 +73,9 @@ export default function ExistingLink() {
     const changePasswordVisibility = () => {
         setPasswordVisibility(!passwordVisible);
         if (!passwordVisible) {
-            setVisibilityIcon(hideicon);
+            setVisibilityIcon(EyeSlashIcon);
         } else {
-            setVisibilityIcon(showicon);
+            setVisibilityIcon(EyeIcon);
         }
     }
 
