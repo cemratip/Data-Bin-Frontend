@@ -21,8 +21,8 @@ export default function NewLink() {
     const [passwordVisible, setPasswordVisibility] = useState(false);
     const [copied, setCopied] = useState(false);
     const [editable, setEditable] = useState(true);
-    const frontendBaseURL = 'https://databin.co.uk/';
-    const backendBaseURL = 'https://data-bin.herokuapp.com/';
+    const frontendBaseURL = process.env.REACT_APP_FRONTENDBASEURL;
+    const backendBaseURL = process.env.REACT_APP_BACKENDBASEURL;
 
     useEffect(() => {
         axios.get(backendBaseURL)
@@ -30,7 +30,7 @@ export default function NewLink() {
             setEndpoint(response.data);
             setLink(frontendBaseURL+response.data);
         })
-    }, [])
+    }, [backendBaseURL, frontendBaseURL])
 
     const onTextChange = e => {
         setTextData(e.target.value);
@@ -59,7 +59,6 @@ export default function NewLink() {
     }
 
     const save = () => {
-        console.log(new Date());
         if (!(saved == null)) {
             bcrypt.genSalt(10, function (err, salt) {
                 bcrypt.hash(password, salt, function (err, hashedPassword) {
@@ -72,7 +71,6 @@ export default function NewLink() {
                         text_content: textData,
                         currentAt: new Date(),
                     }
-                    console.log(data);
                     axios.post(backendBaseURL, data);
                     setSaved(true);
                 })

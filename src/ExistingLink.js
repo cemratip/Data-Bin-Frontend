@@ -18,8 +18,8 @@ export default function ExistingLink() {
     const [incorrectPassword, setIncorrectPassword] = useState(false);
     const [linkNotFound, setLinkNotFound] = useState(false);
     const [copied, setCopied] = useState(false);
-    const frontendBaseURL = 'https://databin.co.uk/';
-    const backendBaseURL = 'https://data-bin.herokuapp.com/';
+    const frontendBaseURL = process.env.REACT_APP_FRONTENDBASEURL;
+    const backendBaseURL = process.env.REACT_APP_BACKENDBASEURL;
     const endpoint = window.location.href.replace(frontendBaseURL, '');
     const linkToDisplay = frontendBaseURL + endpoint;
     const linkToCall = backendBaseURL + endpoint;
