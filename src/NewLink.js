@@ -23,8 +23,6 @@ export default function NewLink() {
     const [editable, setEditable] = useState(true);
     const frontendBaseURL = process.env.REACT_APP_FRONTENDBASEURL;
     const backendBaseURL = process.env.REACT_APP_BACKENDBASEURL;
-    console.log(process.env.REACT_APP_FRONTENDBASEURL);
-    console.log(process.env.REACT_APP_BACKENDBASEURL);
 
     useEffect(() => {
         axios.get(backendBaseURL)
